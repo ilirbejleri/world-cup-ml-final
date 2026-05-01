@@ -393,6 +393,25 @@ validation-tuned ensemble hybrid. The spread across variants shows that winner
 forecasts are more model-sensitive than the 2022 W/D/L test metrics alone
 suggest.
 
+The comparison with betting markets is useful because liquid odds aggregate
+information that is difficult for our feature table to encode, including squad
+depth, injuries, tactical news, public expert judgment, and path-specific
+expectations. In an efficient market, prices should approximate event
+probabilities after accounting for fees and overround, so a model that gives a
+top contender a probability far outside market consensus needs a technical
+explanation. Our primary Spain estimate being close to Polymarket is therefore
+a sanity check on calibration, not a proof that the model is correct. Markets
+can also fail: they can be distorted by liquidity, public-team bias, stale
+information, hedging behavior, and correlated trader beliefs. Our models differ
+because they are constrained to historical match results, engineered form
+features, Elo, and a simplified bracket. Where the model is above market, it is
+usually emphasizing recent performance and simulated path strength; where it is
+below market, it is usually missing roster quality, player availability, or
+market expectations about future team selection. The two views are therefore
+complementary: betting odds provide an external probability benchmark, while
+the model provides a reproducible explanation of which historical signals drive
+the forecast.
+
 \section{Related Work}
 
 Football score prediction often begins with Poisson goal models
