@@ -1,4 +1,7 @@
 # Final World Cup Modeling Pipeline
+Authors
+- Ahmed Alamin
+
 
 This directory is an isolated final-version pipeline. It contains the data cache, source code, model artifacts, report source, style file, and bibliography needed to rerun and submit the final project without depending on `papers/` or the older project scripts.
 
