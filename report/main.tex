@@ -380,18 +380,42 @@ reproducible but does not fully encode FIFA's exact round-of-32 pairing table.
   \label{fig:champions}
 \end{figure}
 
+\begin{center}
+\small
+\textbf{Top-ten 2026 champion probability excerpt.} The full 48-team forecast
+across all simulator variants is reported in Table~\ref{tab:forecastvariants}.
+Values are percentages.\\[0.5em]
+\begin{tabular}{lrr}
+\toprule
+Team & Primary model & Polymarket \\
+\midrule
+Spain & 14.9 & 15.3 \\
+Argentina & 12.6 & 8.7 \\
+France & 9.1 & 16.4 \\
+Turkiye & 6.5 & 0.7 \\
+England & 6.5 & 11.1 \\
+Germany & 5.9 & 5.2 \\
+Netherlands & 5.8 & 3.4 \\
+Brazil & 5.7 & 8.6 \\
+Morocco & 4.5 & 1.9 \\
+Portugal & 3.7 & 7.4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 The top primary championship probabilities are Spain 14.9\%, Argentina
 12.6\%, France 9.1\%, Turkiye 6.5\%, England 6.5\%, Germany 5.9\%,
 Netherlands 5.8\%, Brazil 5.7\%, Morocco 4.5\%, and Portugal 3.7\%. Polymarket
 placed Spain at 15.3\% in the April 30, 2026 snapshot
 \citep{polymarket2026odds}, so the primary model is close to the market's
 Spain estimate while assigning more probability to Argentina and less to
-France, England, Brazil, and Portugal. For sensitivity, the appendix reports
-all 48 champion probabilities for four forecast variants: Poisson-only, the
-primary NN-original-18 hybrid, the high-accuracy NN hybrid, and the
-validation-tuned ensemble hybrid. The spread across variants shows that winner
-forecasts are more model-sensitive than the 2022 W/D/L test metrics alone
-suggest.
+France, England, Brazil, and Portugal. For sensitivity,
+Table~\ref{tab:forecastvariants} reports exact champion probabilities for all
+48 teams across four
+forecast variants: Poisson-only, the primary NN-original-18 hybrid, the
+high-accuracy NN hybrid, and the validation-tuned ensemble hybrid. The spread
+across variants shows that winner forecasts are more model-sensitive than the
+2022 W/D/L test metrics alone suggest.
 
 The comparison with betting markets is useful because liquid odds aggregate
 information that is difficult for our feature table to encode, including squad
