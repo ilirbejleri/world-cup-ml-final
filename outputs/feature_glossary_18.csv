@@ -1,0 +1,19 @@
+Feature,Feature Family,Definition,Final Pipeline Representation
+elo_a,Strength,Pre-match Elo rating of the higher-rated team A.,"abs_delta_elo, delta_elo, delta_elo_sq, elo_a, elo_diff, elo_prob_a, team_elo"
+elo_b,Strength,Pre-match Elo rating of the lower-rated team B.,"abs_delta_elo, delta_elo, delta_elo_sq, elo_b, elo_diff, elo_prob_a, opp_elo"
+wr_a,Recent form,Team A win-rate over the recent-match form window.,"abs_wr5_diff, wr10_a, wr10_diff, wr4y_a, wr4y_diff, wr5_a, wr5_diff, wr_a"
+wr_b,Recent form,Team B win-rate over the recent-match form window.,"abs_wr5_diff, wr10_b, wr10_diff, wr4y_b, wr4y_diff, wr5_b, wr5_diff, wr_b"
+gd_a,Recent form,Team A average goal differential over the form window.,"abs_gd5_diff, gd10_a, gd10_diff, gd4y_a, gd4y_diff, gd5_a, gd5_diff, gd_a, team_gd5"
+gd_b,Recent form,Team B average goal differential over the form window.,"abs_gd5_diff, gd10_b, gd10_diff, gd4y_b, gd4y_diff, gd5_b, gd5_diff, gd_b, opp_gd5, team_gd5"
+gs_a,Recent attack,Team A average goals scored over the form window.,"gs10_a, gs4y_a, gs5_a, gs5_diff, gs_a, team_gs5"
+gs_b,Recent attack,Team B average goals scored over the form window.,"gs10_b, gs4y_b, gs5_b, gs5_diff, gs_b, team_gs5"
+opp_elo_a,Schedule strength,Average recent opponent Elo faced by team A.,"opp_elo10_a, opp_elo4y_a, opp_elo5_a, opp_elo5_diff, opp_elo_a"
+opp_elo_b,Schedule strength,Average recent opponent Elo faced by team B.,"opp_elo10_b, opp_elo4y_b, opp_elo5_b, opp_elo5_diff, opp_elo_b"
+cs_a,Recent defense,Team A clean-sheet rate over the form window.,"cs10_a, cs4y_a, cs5_a, cs5_diff, cs_a, team_cs5"
+cs_b,Recent defense,Team B clean-sheet rate over the form window.,"cs10_b, cs4y_b, cs5_b, cs5_diff, cs_b, opp_cs5, team_cs5"
+wc_hist_a,Tournament history,Time-decayed deepest prior World Cup stage reached by team A.,"team_wc_hist, wc_hist_a"
+wc_hist_b,Tournament history,Time-decayed deepest prior World Cup stage reached by team B.,"team_wc_hist, wc_hist_b"
+h2h_a,Matchup,Historical head-to-head score for team A against team B.,"h2h_4y_a, h2h_4y_n, h2h_a"
+stage_ord,Context,Ordinal match-stage indicator from group stage through final.,"is_group, is_world_cup, stage_ord"
+upset_a,Upset tendency,EMA rate at which team A lost matches while favored by Elo.,upset_a
+gk_b,Underdog tendency,EMA rate at which team B won matches while unfavored by Elo.,gk_b

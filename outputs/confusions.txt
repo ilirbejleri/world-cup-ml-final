@@ -1,0 +1,190 @@
+
+=== NN-original-18 ===
+Counts:        Win  Draw  Loss
+  Actual W      27     0     6
+  Actual D       7     0     3
+  Actual L      15     0     6
+Recall:
+  Actual W    0.82  0.00  0.18
+  Actual D    0.70  0.00  0.30
+  Actual L    0.71  0.00  0.29
+
+=== NN-full-regularized ===
+Counts:        Win  Draw  Loss
+  Actual W      26     2     5
+  Actual D       5     0     5
+  Actual L      13     0     8
+Recall:
+  Actual W    0.79  0.06  0.15
+  Actual D    0.50  0.00  0.50
+  Actual L    0.62  0.00  0.38
+
+=== MLR-original-18 ===
+Counts:        Win  Draw  Loss
+  Actual W      23     0    10
+  Actual D       4     0     6
+  Actual L      13     0     8
+Recall:
+  Actual W    0.70  0.00  0.30
+  Actual D    0.40  0.00  0.60
+  Actual L    0.62  0.00  0.38
+
+=== Validation-tuned family ensemble ===
+Counts:        Win  Draw  Loss
+  Actual W      30     0     3
+  Actual D       9     0     1
+  Actual L      16     0     5
+Recall:
+  Actual W    0.91  0.00  0.09
+  Actual D    0.90  0.00  0.10
+  Actual L    0.76  0.00  0.24
+
+=== NN-strength ===
+Counts:        Win  Draw  Loss
+  Actual W      26     0     7
+  Actual D       8     0     2
+  Actual L      15     0     6
+Recall:
+  Actual W    0.79  0.00  0.21
+  Actual D    0.80  0.00  0.20
+  Actual L    0.71  0.00  0.29
+
+=== NN-expanded-no-underdog ===
+Counts:        Win  Draw  Loss
+  Actual W      30     0     3
+  Actual D       6     3     1
+  Actual L      15     0     6
+Recall:
+  Actual W    0.91  0.00  0.09
+  Actual D    0.60  0.30  0.10
+  Actual L    0.71  0.00  0.29
+
+=== NN-recent-no-elo ===
+Counts:        Win  Draw  Loss
+  Actual W      25     0     8
+  Actual D       7     0     3
+  Actual L      14     0     7
+Recall:
+  Actual W    0.76  0.00  0.24
+  Actual D    0.70  0.00  0.30
+  Actual L    0.67  0.00  0.33
+
+=== RF-original-18 ===
+Counts:        Win  Draw  Loss
+  Actual W      26     3     4
+  Actual D       9     0     1
+  Actual L      15     0     6
+Recall:
+  Actual W    0.79  0.09  0.12
+  Actual D    0.90  0.00  0.10
+  Actual L    0.71  0.00  0.29
+
+=== Poisson-independent ===
+Counts:        Win  Draw  Loss
+  Actual W      31     0     2
+  Actual D      10     0     0
+  Actual L      18     0     3
+Recall:
+  Actual W    0.94  0.00  0.06
+  Actual D    1.00  0.00  0.00
+  Actual L    0.86  0.00  0.14
+
+=== MLR-full ===
+Counts:        Win  Draw  Loss
+  Actual W      24     0     9
+  Actual D       3     1     6
+  Actual L      10     2     9
+Recall:
+  Actual W    0.73  0.00  0.27
+  Actual D    0.30  0.10  0.60
+  Actual L    0.48  0.10  0.43
+
+=== Poisson-draw-inflated ===
+Counts:        Win  Draw  Loss
+  Actual W      31     0     2
+  Actual D      10     0     0
+  Actual L      18     0     3
+Recall:
+  Actual W    0.94  0.00  0.06
+  Actual D    1.00  0.00  0.00
+  Actual L    0.86  0.00  0.14
+
+=== MLR-recent-no-elo ===
+Counts:        Win  Draw  Loss
+  Actual W      19     4    10
+  Actual D       4     2     4
+  Actual L       8     3    10
+Recall:
+  Actual W    0.58  0.12  0.30
+  Actual D    0.40  0.20  0.40
+  Actual L    0.38  0.14  0.48
+
+=== MLR-original-matchup ===
+Counts:        Win  Draw  Loss
+  Actual W      22     0    11
+  Actual D       5     0     5
+  Actual L       9     0    12
+Recall:
+  Actual W    0.67  0.00  0.33
+  Actual D    0.50  0.00  0.50
+  Actual L    0.43  0.00  0.57
+
+=== RF-full ===
+Counts:        Win  Draw  Loss
+  Actual W      30     0     3
+  Actual D       9     0     1
+  Actual L      14     1     6
+Recall:
+  Actual W    0.91  0.00  0.09
+  Actual D    0.90  0.00  0.10
+  Actual L    0.67  0.05  0.29
+
+=== RF-recent-no-elo ===
+Counts:        Win  Draw  Loss
+  Actual W      23     0    10
+  Actual D       7     1     2
+  Actual L      13     1     7
+Recall:
+  Actual W    0.70  0.00  0.30
+  Actual D    0.70  0.10  0.20
+  Actual L    0.62  0.05  0.33
+
+=== MLR-strength ===
+Counts:        Win  Draw  Loss
+  Actual W      22     1    10
+  Actual D       5     1     4
+  Actual L      10     0    11
+Recall:
+  Actual W    0.67  0.03  0.30
+  Actual D    0.50  0.10  0.40
+  Actual L    0.48  0.00  0.52
+
+=== MLR-original-form ===
+Counts:        Win  Draw  Loss
+  Actual W      20     0    13
+  Actual D       4     0     6
+  Actual L       8     2    11
+Recall:
+  Actual W    0.61  0.00  0.39
+  Actual D    0.40  0.00  0.60
+  Actual L    0.38  0.10  0.52
+
+=== MLR-original-baseline-5 ===
+Counts:        Win  Draw  Loss
+  Actual W      24     2     7
+  Actual D       4     1     5
+  Actual L      11     0    10
+Recall:
+  Actual W    0.73  0.06  0.21
+  Actual D    0.40  0.10  0.50
+  Actual L    0.52  0.00  0.48
+
+=== RF-strength ===
+Counts:        Win  Draw  Loss
+  Actual W      27     1     5
+  Actual D       7     0     3
+  Actual L      14     0     7
+Recall:
+  Actual W    0.82  0.03  0.15
+  Actual D    0.70  0.00  0.30
+  Actual L    0.67  0.00  0.33

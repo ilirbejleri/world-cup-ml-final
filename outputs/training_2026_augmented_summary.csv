@@ -1,0 +1,4 @@
+Split,Rows,World Cup Rows,International Rows,Start,End
+Base model-selection table,14881,964,13917,1930-07-13,2022-12-18
+2026-only supplemental rows,4358,0,4358,2022-01-01,2026-03-31
+2026 augmented training table,19239,964,18275,1930-07-13,2026-03-31

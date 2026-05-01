@@ -1,0 +1,20 @@
+Model,Family,Direct Feature Count,Original18 Used Count,Original18 Used,Original18 Not Used,elo_a,elo_b,wr_a,wr_b,gd_a,gd_b,gs_a,gs_b,opp_elo_a,opp_elo_b,cs_a,cs_b,wc_hist_a,wc_hist_b,h2h_a,stage_ord,upset_a,gk_b
+MLR-original-baseline-5,MLR,5,6,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b","gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+MLR-original-18,MLR,18,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+MLR-original-form,MLR,8,8,"wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b","elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",0,0,1,1,1,1,1,1,0,0,1,1,0,0,0,0,0,0
+MLR-original-matchup,MLR,6,6,"elo_a, elo_b, h2h_a, stage_ord, upset_a, gk_b","wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b",1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1
+MLR-strength,MLR,8,6,"elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b","wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord, upset_a, gk_b",1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0
+MLR-full,MLR,55,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+MLR-recent-no-elo,MLR,28,10,"wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord","elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b, upset_a, gk_b",0,0,1,1,1,1,1,1,0,0,1,1,0,0,1,1,0,0
+RF-original-18,RF,18,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+RF-strength,RF,8,6,"elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b","wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord, upset_a, gk_b",1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0
+RF-full,RF,55,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+RF-recent-no-elo,RF,28,10,"wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord","elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b, upset_a, gk_b",0,0,1,1,1,1,1,1,0,0,1,1,0,0,1,1,0,0
+Poisson-independent,Poisson,13,11,"elo_a, elo_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, wc_hist_a, wc_hist_b, stage_ord","wr_a, wr_b, opp_elo_a, opp_elo_b, h2h_a, upset_a, gk_b",1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,1,0,0
+Poisson-draw-inflated,Poisson,13,11,"elo_a, elo_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, wc_hist_a, wc_hist_b, stage_ord","wr_a, wr_b, opp_elo_a, opp_elo_b, h2h_a, upset_a, gk_b",1,1,0,0,1,1,1,1,0,0,1,1,1,1,0,1,0,0
+NN-strength,NN,8,6,"elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b","wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord, upset_a, gk_b",1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0
+NN-original-18,NN,18,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+NN-full-regularized,NN,55,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+NN-expanded-no-underdog,NN,53,16,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord","upset_a, gk_b",1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0
+NN-recent-no-elo,NN,28,10,"wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, cs_a, cs_b, h2h_a, stage_ord","elo_a, elo_b, opp_elo_a, opp_elo_b, wc_hist_a, wc_hist_b, upset_a, gk_b",0,0,1,1,1,1,1,1,0,0,1,1,0,0,1,1,0,0
+Validation-tuned family ensemble,Ensemble,70,18,"elo_a, elo_b, wr_a, wr_b, gd_a, gd_b, gs_a, gs_b, opp_elo_a, opp_elo_b, cs_a, cs_b, wc_hist_a, wc_hist_b, h2h_a, stage_ord, upset_a, gk_b",,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1

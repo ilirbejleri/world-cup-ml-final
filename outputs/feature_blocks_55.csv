@@ -1,0 +1,56 @@
+Feature Block,Direct Column,Source 18-Family Interpretation
+strength_and_history,elo_a,elo_a
+strength_and_history,elo_b,elo_b
+strength_and_history,delta_elo,"elo_a, elo_b"
+strength_and_history,elo_prob_a,"elo_a, elo_b"
+strength_and_history,wc_hist_a,wc_hist_a
+strength_and_history,wc_hist_b,wc_hist_b
+strength_and_history,opp_elo5_a,opp_elo_a
+strength_and_history,opp_elo5_b,opp_elo_b
+last_5_form,wr5_a,wr_a
+last_5_form,wr5_b,wr_b
+last_5_form,wr5_diff,"wr_a, wr_b"
+last_5_form,gd5_a,gd_a
+last_5_form,gd5_b,gd_b
+last_5_form,gd5_diff,"gd_a, gd_b"
+last_5_form,gs5_a,gs_a
+last_5_form,gs5_b,gs_b
+last_5_form,gc5_a,derived context
+last_5_form,gc5_b,derived context
+last_5_form,cs5_a,cs_a
+last_5_form,cs5_b,cs_b
+last_10_form,wr10_a,wr_a
+last_10_form,wr10_b,wr_b
+last_10_form,wr10_diff,"wr_a, wr_b"
+last_10_form,gd10_a,gd_a
+last_10_form,gd10_b,gd_b
+last_10_form,gd10_diff,"gd_a, gd_b"
+last_10_form,gs10_a,gs_a
+last_10_form,gs10_b,gs_b
+last_10_form,gc10_a,derived context
+last_10_form,gc10_b,derived context
+last_10_form,cs10_a,cs_a
+last_10_form,cs10_b,cs_b
+recent_4y_form,wr4y_a,wr_a
+recent_4y_form,wr4y_b,wr_b
+recent_4y_form,wr4y_diff,"wr_a, wr_b"
+recent_4y_form,gd4y_a,gd_a
+recent_4y_form,gd4y_b,gd_b
+recent_4y_form,gd4y_diff,"gd_a, gd_b"
+recent_4y_form,gs4y_a,gs_a
+recent_4y_form,gs4y_b,gs_b
+recent_4y_form,gc4y_a,derived context
+recent_4y_form,gc4y_b,derived context
+recent_4y_form,cs4y_a,cs_a
+recent_4y_form,cs4y_b,cs_b
+context_and_interactions,h2h_4y_a,h2h_a
+context_and_interactions,h2h_4y_n,h2h_a
+context_and_interactions,stage_ord,stage_ord
+context_and_interactions,is_group,stage_ord
+context_and_interactions,is_world_cup,stage_ord
+context_and_interactions,abs_delta_elo,"elo_a, elo_b"
+context_and_interactions,delta_elo_sq,"elo_a, elo_b"
+context_and_interactions,abs_gd5_diff,"gd_a, gd_b"
+context_and_interactions,abs_wr5_diff,"wr_a, wr_b"
+context_and_interactions,upset_a,upset_a
+context_and_interactions,gk_b,gk_b

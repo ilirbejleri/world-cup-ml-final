@@ -1,0 +1,5 @@
+Forecast,Top Team,Top Champion Probability,Spain Champion Probability
+Poisson-only score baseline,Spain,0.251,0.251
+NN-original-18 calibrated score simulator,Spain,0.1486,0.1486
+NN-expanded-no-underdog calibrated score simulator,Spain,0.1476,0.1476
+Validation-tuned ensemble calibrated score simulator,Spain,0.1908,0.1908
