@@ -249,8 +249,9 @@ per family based only on validation checkpoints and tunes convex weights on
 those checkpoints.
 
 \paragraph{Hyperparameters.}
-MLR uses multinomial logistic regression with balanced class weights and
-$C\in\{0.01,0.1,1.0\}$. RF variants use balanced-subsample forests with
+Hyperparameters are tuned via walk-forward grid search over the validation
+checkpoints in Section 3. MLR uses multinomial logistic regression with
+balanced class weights and $C\in\{0.01,0.1,1.0\}$. RF variants use balanced-subsample forests with
 \texttt{sqrt} feature sampling; original/strength models tune 250 or 350 trees
 with depth 5 or 8, while full/recent models tune 300 or 500 trees with depth
 5--10 and leaf sizes 10 or 20. NN models use two ReLU hidden layers with dropout,

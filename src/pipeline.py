@@ -1274,16 +1274,16 @@ def write_figures(
         f"{row.Model} ({int(row['Original18 Used Count'])}/18)"
         for _, row in feature_usage.iterrows()
     ]
-    fig, ax = plt.subplots(figsize=(12, max(5, 0.42 * len(feature_usage))))
+    fig, ax = plt.subplots(figsize=(12.8, max(5.6, 0.48 * len(feature_usage))))
     ax.imshow(matrix, aspect="auto", cmap="Greens", vmin=0, vmax=1)
     ax.set_xticks(np.arange(len(ORIGINAL_18_FEATURES)))
-    ax.set_xticklabels(ORIGINAL_18_FEATURES, rotation=45, ha="right")
+    ax.set_xticklabels(ORIGINAL_18_FEATURES, rotation=45, ha="right", fontsize=10)
     ax.set_yticks(np.arange(len(ylabels)))
-    ax.set_yticklabels(ylabels)
-    ax.set_title("Original 18 Engineered Feature Families Used by Each Model")
+    ax.set_yticklabels(ylabels, fontsize=9)
+    ax.set_title("Original 18 Engineered Feature Families Used by Each Model", fontsize=13)
     for i in range(matrix.shape[0]):
         for j in range(matrix.shape[1]):
-            ax.text(j, i, "1" if matrix[i, j] else "", ha="center", va="center", fontsize=6)
+            ax.text(j, i, "1" if matrix[i, j] else "", ha="center", va="center", fontsize=7)
     fig.tight_layout()
     fig.savefig(FIG_DIR / "feature_usage_heatmap.png", bbox_inches="tight")
     plt.close(fig)
