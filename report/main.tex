@@ -248,6 +248,20 @@ regression and a draw-inflated Poisson variant. The ensemble chooses one model
 per family based only on validation checkpoints and tunes convex weights on
 those checkpoints.
 
+\paragraph{Hyperparameters.}
+MLR uses multinomial logistic regression with balanced class weights and
+$C\in\{0.01,0.1,1.0\}$. RF variants use balanced-subsample forests with
+\texttt{sqrt} feature sampling; original/strength models tune 250 or 350 trees
+with depth 5 or 8, while full/recent models tune 300 or 500 trees with depth
+5--10 and leaf sizes 10 or 20. NN models use two ReLU hidden layers with dropout,
+Adam, batch size at most 256, early stopping with patience 20, and at most 220
+epochs. The best NN-original-18 uses hidden sizes $(24,12)$, dropout 0.30,
+learning rate 0.004, and weight decay $10^{-3}$; NN-full-regularized uses
+$(48,16)$, dropout 0.50, learning rate 0.002, and weight decay $3\cdot10^{-3}$,
+so it has more capacity but stronger regularization. Poisson models tune
+ridge penalty $\alpha\in\{0.001,0.01,0.1\}$ and draw boosts
+$0.15$--$0.75$ for the draw-inflated variant.
+
 \paragraph{Knockout draw handling.}
 Draws are valid in group matches, but not as final knockout outcomes. The
 pipeline explicitly handles this in two places. During validation and testing,
@@ -334,7 +348,8 @@ argmax predictions rarely select draws.
 \centering
 \small
 \caption{Representative 2022 confusion matrices. Rows are actual labels and
-columns are predicted labels.}
+columns are predicted labels. The three rows show the best log-loss model, the
+best accuracy/draw-recall model, and the score-generating Poisson baseline.}
 \label{tab:confusions}
 \begin{tabular}{llrrr}
 \toprule
@@ -373,21 +388,21 @@ in each group plus the eight best third-place teams, and then uses a
 transparent high-vs-low seeded knockout approximation. This approximation is
 reproducible but does not fully encode FIFA's exact round-of-32 pairing table.
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.70\textwidth]{champion_probabilities_2026.png}
-  \caption{Top 2026 champion probabilities from 5,000 Monte Carlo simulations.}
-  \label{fig:champions}
-\end{figure}
-
 \begin{center}
-\small
-\textbf{Top-ten 2026 champion probability excerpt.} The full 48-team forecast
-across all simulator variants is reported in Table~\ref{tab:forecastvariants}.
-Values are percentages.\\[0.5em]
-\begin{tabular}{lrr}
+\centering
+\begin{minipage}[t]{0.47\textwidth}
+  \vspace{0pt}
+  \includegraphics[width=\linewidth]{champion_probabilities_2026.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \vspace{0pt}
+  \scriptsize
+  \textbf{Top-ten 2026 champion probability excerpt.}
+  Full 48-team forecast variants are in Table~\ref{tab:forecastvariants};
+  values are percentages.\\[0.35em]
+\begin{tabular}{@{}lrr@{}}
 \toprule
-Team & Primary model & Polymarket \\
+Team & \shortstack{NN-original-18\\hybrid} & Polymarket \\
 \midrule
 Spain & 14.9 & 15.3 \\
 Argentina & 12.6 & 8.7 \\
@@ -401,18 +416,25 @@ Morocco & 4.5 & 1.9 \\
 Portugal & 3.7 & 7.4 \\
 \bottomrule
 \end{tabular}
+\end{minipage}
+\par\smallskip
+\refstepcounter{figure}
+\label{fig:champions}
+\small \textbf{Figure~\thefigure:} Left: top 2026 champion probabilities from
+5,000 Monte Carlo simulations. Right: top-ten forecast excerpt against
+Polymarket percentages.
 \end{center}
 
-The top primary championship probabilities are Spain 14.9\%, Argentina
+The top NN-original-18 hybrid championship probabilities are Spain 14.9\%, Argentina
 12.6\%, France 9.1\%, Turkiye 6.5\%, England 6.5\%, Germany 5.9\%,
 Netherlands 5.8\%, Brazil 5.7\%, Morocco 4.5\%, and Portugal 3.7\%. Polymarket
 placed Spain at 15.3\% in the April 30, 2026 snapshot
-\citep{polymarket2026odds}, so the primary model is close to the market's
+\citep{polymarket2026odds}, so the NN-original-18 hybrid is close to the market's
 Spain estimate while assigning more probability to Argentina and less to
 France, England, Brazil, and Portugal. For sensitivity,
 Table~\ref{tab:forecastvariants} reports exact champion probabilities for all
 48 teams across four
-forecast variants: Poisson-only, the primary NN-original-18 hybrid, the
+forecast variants: Poisson-only, the NN-original-18 hybrid, the
 high-accuracy NN hybrid, and the validation-tuned ensemble hybrid. The spread
 across variants shows that winner forecasts are more model-sensitive than the
 2022 W/D/L test metrics alone suggest.
@@ -423,8 +445,8 @@ depth, injuries, tactical news, public expert judgment, and path-specific
 expectations. In an efficient market, prices should approximate event
 probabilities after accounting for fees and overround, so a model that gives a
 top contender a probability far outside market consensus needs a technical
-explanation. Our primary Spain estimate being close to Polymarket is therefore
-a sanity check on calibration, not a proof that the model is correct. Markets
+explanation. The NN-original-18 hybrid's Spain estimate being close to
+Polymarket is therefore a sanity check on calibration, not a proof that the model is correct. Markets
 can also fail: they can be distorted by liquidity, public-team bias, stale
 information, hedging behavior, and correlated trader beliefs. Our models differ
 because they are constrained to historical match results, engineered form
@@ -438,17 +460,23 @@ the forecast.
 
 \section{Related Work}
 
-Football score prediction often begins with Poisson goal models
-\citep{maher1982modelling}. Dixon and Coles improve this family by correcting
-low-score dependence \citep{dixon1997modelling}. Elo ratings are effective
-features for football outcome prediction \citep{hvattum2010using}. Random
-forests and hybrid tournament models have also been applied to international
-football \citep{schauberger2018predicting,groll2019hybrid}. Tournament
-simulators commonly combine match probabilities with Monte Carlo brackets
-\citep{groll2015prediction,fivethirtyeight2022}. Our contribution is the
-course-project system design: all supervised international labels,
-walk-forward World Cup checkpoints, multiple model families, feature-family
-accounting, and a reproducible classifier-calibrated 2026 simulation.
+Football score prediction often begins with independent Poisson goal models
+\citep{maher1982modelling}; our Poisson layer keeps that interpretable score
+distribution but does not force it to be the final outcome classifier. Dixon
+and Coles improve Poisson models by correcting low-score dependence
+\citep{dixon1997modelling}; our draw-inflated variant is a simpler correction,
+and the hybrid simulator instead calibrates total W/D/L mass to a supervised
+classifier. Elo ratings are effective football features
+\citep{hvattum2010using}; we use Elo as one feature family rather than the
+entire model, combining it with form, history, matchup, and context features.
+Random forests and hybrid tournament models have been used for international
+football \citep{schauberger2018predicting,groll2019hybrid}; compared with that
+line of work, this project emphasizes model-family comparison, feature-family
+accounting, and walk-forward World Cup checkpoints instead of only optimizing a
+single tournament simulator. Monte Carlo bracket simulation is standard
+\citep{groll2015prediction,fivethirtyeight2022}; our specific contribution is
+a reproducible classifier-calibrated score simulator that can report both
+match-level accuracy/log loss and full 2026 champion probabilities.
 
 \section{Discussion}
 
